@@ -1,10 +1,9 @@
 \documentclass[11pt,answers]{exam}
 \usepackage[utf8]{inputenc}
-\usepackage[francais]{babel}
+\usepackage[french]{babel}
 \frenchbsetup{StandardLists=true}
 \usepackage{amssymb,amsmath,amsfonts}
 \usepackage{lmodern}
-\usepackage{enumitem}
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{graphicx}
@@ -46,7 +45,7 @@
     tabsize=2
 }
 \lstset{style=mystyle}
-
+\graphicspath{{images/}}
 \footer{}{Page~\thepage}{}
 
 \begin{document}
@@ -56,8 +55,8 @@ LEPL1108 - Mathématiques discrètes et probabilité \hfill Année académique 2
 
 \begin{center}
 
-{\large Devoir 3 : Puissance 4 (\textit{Monte Carlo})}
-\bigskip
+	{\large Devoir 3 : Puissance 4 (\textit{Monte Carlo})}
+	\bigskip
 
 \end{center}
 \hrule
@@ -68,7 +67,7 @@ LEPL1108 - Mathématiques discrètes et probabilité \hfill Année académique 2
 
 \noindent
 \emph{Ce devoir est individuel.}
-Il vous est demandé de résoudre ce problème individuellement. Vous êtes autorisé.e, et même encouragé.e, à échanger des idées avec d'autres étudiant.e.s sur la façon d'aborder ce devoir. En revanche, vous devez rédiger votre solution individuellement : ne partagez pas votre production. Nous serons intransigeant.e.s si nous observons des similitudes dans votre code ou votre rapport, lesquels passeront dans les logiciels anti-plagiat de Gradescope.  
+Il vous est demandé de résoudre ce problème individuellement. Vous êtes autorisé.e, et même encouragé.e, à échanger des idées avec d'autres étudiant.e.s sur la façon d'aborder ce devoir. En revanche, vous devez rédiger votre solution individuellement : ne partagez pas votre production. Nous serons intransigeant.e.s si nous observons des similitudes dans votre code ou votre rapport, lesquels passeront dans les logiciels anti-plagiat de Gradescope.
 
 \bigskip \noindent
 \emph{Echéance:} Mercredi 27 novembre 2024 à 18h00.
@@ -79,16 +78,16 @@ Il vous est demandé de résoudre ce problème individuellement. Vous êtes auto
 \noindent
 \section*{Informations pratiques}
 \begin{itemize}
-\setlength{\itemsep}{0mm}
+	\setlength{\itemsep}{0mm}
 	\item Soumission sur \url{https://www.gradescope.com/}, connectez-vous avec vos identifiants UCLouvain.
-	\item Si vous êtes inscrits sur la page Moodle du cours, vous devriez voir apparaître LEPL1108 dans la liste de vos cours. Si ce n'est pas le cas, vous devriez pouvoir rejoindre le cours en vous servant du code \texttt{Z3BEBY}. 
-        \item Ce devoir est divisé en quatre sections. Les sections 1, 2 et 4 doivent \^etre complétées en répondant aux questions par écrit et en soumettant l'énoncé complété en PDF sur Gradescope dans la partie \texttt{Devoir 3: Puissance 4 PDF}. Le code de la section 3 doit \^etre soumis sur Gradescope dans la partie \texttt{Devoir 3: Puissance 4 AI}.
-        \item Un fichier Latex intitulé \texttt{Devoir3.tex} est disponible sur Moodle pour faciliter le remplissage de l'énoncé du devoir. Ne modifiez pas la taille et/ou la position des cadres de réponse pour éviter des problèmes de lecture par Gradescope.
+	\item Si vous êtes inscrits sur la page Moodle du cours, vous devriez voir apparaître LEPL1108 dans la liste de vos cours. Si ce n'est pas le cas, vous devriez pouvoir rejoindre le cours en vous servant du code \texttt{Z3BEBY}.
+	\item Ce devoir est divisé en quatre sections. Les sections 1, 2 et 4 doivent \^etre complétées en répondant aux questions par écrit et en soumettant l'énoncé complété en PDF sur Gradescope dans la partie \texttt{Devoir 3: Puissance 4 PDF}. Le code de la section 3 doit \^etre soumis sur Gradescope dans la partie \texttt{Devoir 3: Puissance 4 AI}.
+	\item Un fichier Latex intitulé \texttt{Devoir3.tex} est disponible sur Moodle pour faciliter le remplissage de l'énoncé du devoir. Ne modifiez pas la taille et/ou la position des cadres de réponse pour éviter des problèmes de lecture par Gradescope.
 	\item Pour les codes, respectez le modèle fourni, vous risquez sinon d’avoir des problèmes de codage ou des problèmes de lecture du code par Gradescope.
-        \item Sur Moodle, vous trouverez un fichier "squelette" \texttt{montecarlo.py} à compléter et un fichier \texttt{connect4.py} qui seront fournis pour les sections 2 et 4 ainsi qu'un fichier "squelette" \texttt{ai\_student.py} à compléter pour la section 3.
+	\item Sur Moodle, vous trouverez un fichier "squelette" \texttt{montecarlo.py} à compléter et un fichier \texttt{connect4.py} qui seront fournis pour les sections 2 et 4 ainsi qu'un fichier "squelette" \texttt{ai\_student.py} à compléter pour la section 3.
 	\item Pour la section 3, les seuls packages autorisés sont: \texttt{numpy}, \texttt{math} et \texttt{random}.
-        \item Pour ce devoir l'appellation joueur 1/player 1 désigne le joueur qui entame la partie.
-        %\item \textbf{Pondération des points: Les sections 3 et 4 du devoir sont des questions de dépassement et compteront comme bonus pour ce devoir. Un bonus supplémentaire sera également attribué aux étudiant.e.s qui obtiendront les meilleurs scores pour les sections 3 et 4.}
+	\item Pour ce devoir l'appellation joueur 1/player 1 désigne le joueur qui entame la partie.
+	      %\item \textbf{Pondération des points: Les sections 3 et 4 du devoir sont des questions de dépassement et compteront comme bonus pour ce devoir. Un bonus supplémentaire sera également attribué aux étudiant.e.s qui obtiendront les meilleurs scores pour les sections 3 et 4.}
 \end{itemize}
 
 
@@ -96,7 +95,7 @@ Il vous est demandé de résoudre ce problème individuellement. Vous êtes auto
 
 \section*{Introduction}
 
-Nous vous proposons de jouer un jeu que vous connaissez sans doute : Puissance 4. Pour celle et ceux qui ne sont pas familier.ère.s avec ce jeu, les règles peuvent être trouvées sur \href{https://www.regles-de-jeux.com/regle-du-puissance-4/}{ce site}). Etant toustes des grands amateur.ice.s de calcul probabiliste, nous utiliserons la méthode dite de Monte Carlo pour calculer le pourcentage de victoire attendu à Puissance 4 pour différentes stratégies de jeu. 
+Nous vous proposons de jouer un jeu que vous connaissez sans doute : Puissance 4. Pour celle et ceux qui ne sont pas familier.ère.s avec ce jeu, les règles peuvent être trouvées sur \href{https://www.regles-de-jeux.com/regle-du-puissance-4/}{ce site}). Etant toustes des grands amateur.ice.s de calcul probabiliste, nous utiliserons la méthode dite de Monte Carlo pour calculer le pourcentage de victoire attendu à Puissance 4 pour différentes stratégies de jeu.
 
 
 
@@ -116,13 +115,16 @@ On considère l'état du plateau représenté en Figure \ref{fig:bound}, et on d
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{board.png}
- 	\caption{Plateau de jeu considéré pour le calcul de borne inférieure}
+	\caption{Plateau de jeu considéré pour le calcul de borne inférieure}
 	\label{fig:bound}
 \end{figure}
 
 \begin{solutionbox}{120mm}
-Insérez votre réponse ci-dessous.
-
+	Pour n'importe quel coup du joueur rouge (J1), il n'y qu'un seul coup possible pour le joueur jaune (J2). En effet, J1 ne joue que sur les lignes impaires et J2 sur les lignes paires.\\
+	Il faut donc compter le nombre de configurations des coups du Joueur 1.\\
+	Soit $S$ l'ensemble des coups possibles de J1 sur la partie. $S = \{1, 1, 1, 2, 2, 2, 3, 3, 3, 5, 5, 5, 6, 6, 6, 7, 7, 7\}$ et $|S|=18$.\\
+	Il existe $18!$ ordres (permutations) possibles dans les coups, avec surcomptage pour les 6 trios de coups identiques.\\
+	On obtient alors un nombre de parties $N = \frac{18!}{6\cdot 3!} = 177~843~714~048~000$.
 
 \end{solutionbox}
 
@@ -132,9 +134,9 @@ Insérez votre réponse ci-dessous.
 
 Dans cette section, on considère une stratégie de jeu très basique : \texttt{ai\_random}. Cette stratégie fonctionne de la manière suivante :
 \begin{itemize}
-    \item S'il y a un coup gagnant à jouer (c'est-à-dire une ligne de trois jetons de sa couleur, avec une place libre à côté), elle le joue. On parle d'\texttt{attack move.}
-    \item Sinon, s'il y a un coup gagnant pour l'adversaire, elle le joue afin de bloquer une potentielle victoire de l'adversaire au prochain tour. On parle de \texttt{defense move.}
-    \item Sinon, elle joue au hasard parmi les colonnes non-remplies.
+	\item S'il y a un coup gagnant à jouer (c'est-à-dire une ligne de trois jetons de sa couleur, avec une place libre à côté), elle le joue. On parle d'\texttt{attack move.}
+	\item Sinon, s'il y a un coup gagnant pour l'adversaire, elle le joue afin de bloquer une potentielle victoire de l'adversaire au prochain tour. On parle de \texttt{defense move.}
+	\item Sinon, elle joue au hasard parmi les colonnes non-remplies.
 \end{itemize}
 
 On s'intéresse à la question suivante : si la stratégie \texttt{ai\_random} joue contre elle-même, quel est l'avantage à entamer la partie ? Plus précisément, si les deux joueurs suivent la stratégie \texttt{ai\_random}, quelle est la probabilité que le joueur 1 (celui qui commence) gagne, la probabilité que le joueur 2 gagne, et la probabilité d'ex-æquo ?\\
@@ -146,25 +148,25 @@ La méthode de Monte Carlo consiste à estimer ces probabilités en simulant un 
 On vous demande de calculer le pourcentage de victoires du joueur 1 et le pourcentage d'ex-æquo pour 10, 100, 1000 et 10000 parties. A chaque fois, répétez l'expérience dix fois. Représentez sur un graphique le résultat obtenu pour chacune des dix expériences, ainsi que la moyenne de ces dix expériences. Pour ce faire, on vous fournit :
 
 \begin{itemize}
-    \item \texttt{connect4.py} : fichier qui réunit toutes les fonctions nécessaires afin de simuler une partie de Puissance 4 :
-    \begin{itemize}
-        \item \texttt{ai\_random} : la stratégie basique considérée dans cette section.
-        \item \texttt{update\_board} : met à jour le tableau de jeu à l'aide du coup reçu en argument.
-        \item \texttt{print\_board} : permet une visualisation de l'état du jeu. Utile pour les sections 3 et 4 lorsque vous coderez votre propre AI, et pour débugger.
-        \item \texttt{check\_win} : vérifie si le dernier coup joué est gagnant.
-        \item \texttt{run\_game} : joue une partie de Puissance 4, et retourne 1 si le 1e joueur l'emporte, 2 si c'est le second et 0 si c'est ex-æquo.
-    \end{itemize}
-    Pour cette section, vous ne devez pas modifier ce fichier, mais seulement utiliser la fonction \texttt{run\_game} afin de simuler des parties.
-    \item \texttt{montecarlo.py} : script à compléter qui simule des parties puis représente graphiquement les résultats obtenus. Le format du graphique est fixé, on vous demande de ne pas le modifier afin de faciliter la correction. La partie du code à compléter vise à calculer les tableaux \texttt{win1} et \texttt{draw} : les résultats des simulations.
+	\item \texttt{connect4.py} : fichier qui réunit toutes les fonctions nécessaires afin de simuler une partie de Puissance 4 :
+	      \begin{itemize}
+		      \item \texttt{ai\_random} : la stratégie basique considérée dans cette section.
+		      \item \texttt{update\_board} : met à jour le tableau de jeu à l'aide du coup reçu en argument.
+		      \item \texttt{print\_board} : permet une visualisation de l'état du jeu. Utile pour les sections 3 et 4 lorsque vous coderez votre propre AI, et pour débugger.
+		      \item \texttt{check\_win} : vérifie si le dernier coup joué est gagnant.
+		      \item \texttt{run\_game} : joue une partie de Puissance 4, et retourne 1 si le 1e joueur l'emporte, 2 si c'est le second et 0 si c'est ex-æquo.
+	      \end{itemize}
+	      Pour cette section, vous ne devez pas modifier ce fichier, mais seulement utiliser la fonction \texttt{run\_game} afin de simuler des parties.
+	\item \texttt{montecarlo.py} : script à compléter qui simule des parties puis représente graphiquement les résultats obtenus. Le format du graphique est fixé, on vous demande de ne pas le modifier afin de faciliter la correction. La partie du code à compléter vise à calculer les tableaux \texttt{win1} et \texttt{draw} : les résultats des simulations.
 \end{itemize}
 
 Insérez votre graphique dans le cadre ci-dessous. Il est normal que votre code prenne $\sim$ 15 min à tourner sur votre machine pour $10^4$ parties.
 
 \begin{solutionbox}{100mm}
-    Insérez votre graphique ci-dessous, à la place de ce graphique vide.
+	Insérez votre graphique ci-dessous, à la place de ce graphique vide.
 
-    \centering
-    \includegraphics[width=0.75\textwidth]{MCplot_empty.png}
+	\centering
+	\includegraphics[width=0.75\textwidth]{MCplot.png}
 \end{solutionbox}
 
 Sur base du graphique obtenu, répondez aux questions suivantes :
@@ -172,9 +174,9 @@ Sur base du graphique obtenu, répondez aux questions suivantes :
 \bigskip
 
 1. Y a-t-il un avantage à commencer la partie ? Justifiez votre réponse sur base de votre graphique, en mentionnant les probabilités moyennes obtenues pour $10^4$ parties.
-    
+
 \begin{solutionbox}{25mm}
-Insérez votre réponse ci-dessous.\\
+	Insérez votre réponse ci-dessous.\\
 
 
 \end{solutionbox}
@@ -183,12 +185,12 @@ Insérez votre réponse ci-dessous.\\
 
 2. Soit $n$ le nombre de parties simulées. Pour un $n$ fixé, on s'intéresse à la distance typique des résultats des dix expériences par rapport à leur moyenne. Sur base de votre graphique, vous observez que cette distance typique évolue (à une constante multiplicative près) en :
 \begin{align*}
-      (i) \ n^2 \qquad  (ii) \ n \qquad  (iii)\  \sqrt{n} \qquad (iv) \ 1/\sqrt{n} \qquad  (v) \  1/n^2
+	(i) \ n^2 \qquad  (ii) \ n \qquad  (iii)\  \sqrt{n} \qquad (iv) \ 1/\sqrt{n} \qquad  (v) \  1/n^2
 \end{align*}
 Justifiez votre réponse sur base de votre graphique. Cette notion sera approfondie en cours.
 
 \begin{solutionbox}{25mm}
-Insérez votre réponse ci-dessous.\\
+	Insérez votre réponse ci-dessous.\\
 
 
 \end{solutionbox}
@@ -204,23 +206,23 @@ Maintenant que nous avons analysé ce qui se passerait avec deux joueurs qui jou
 Il vous est demandé d'implémenter en Python votre IA \texttt{ai\_student.py}, sous la forme d'une fonction dont la signature est donnée ci-dessous :
 
 
-\lstinputlisting[language=Python]{ai_student.py}
+\lstinputlisting[language=Python]{code/ai_student.py}
 
 
 \subsubsection*{Inputs}
 
 \begin{itemize}
 	\item \texttt{board} est un tableau (array) numpy de taille $6 \times 7$ qui ne peut contenir que les chiffres 0, 1 ou 2 (0 signifiant que la case est vide, 1 signifiant que la case est remplie par un jeton du joueur 1 et 2 signifiant que la case est remplie par un jetton du joueur 2. Les indexes du tableau font de haut en bas et de gauche à droite, c'est-à-dire que $(0,0)$ correspond au coin en haut à gauche et $(6,7)$ correspond au coin en bas à droite.
-	Le tableau représente l'état actuel du plateau de jeu à votre tour. Les 0, 1 et 2 sont encodés comme des entiers (non pas des strings) dans le tableau.\\
-	\emph{Exemple:} Le plateau de jeu de la Figure \ref{fig:ex_sec3} est représenté par le tableau suivant :
-\begin{align*}
-    \Bigg[ &\begin{bmatrix} 0, & 0, & 0, & 0, & 0, & 0, & 0 \end{bmatrix}, \\
-    &\begin{bmatrix} 0, & 0, & 0, & 0, & 0, & 0, & 0 \end{bmatrix}, \\
-    &\begin{bmatrix} 0, & 0, & 0, & 0, & 0, & 0, & 0 \end{bmatrix}, \\
-    &\begin{bmatrix} 0, & 0, & 2, & 0, & 0, & 0, & 0 \end{bmatrix}, \\
-    &\begin{bmatrix} 0, & 0, & 2, & 1, & 0, & 0, & 0 \end{bmatrix}, \\
-    &\begin{bmatrix} 0, & 1, & 2, & 1, & 0, & 0, & 0 \end{bmatrix} \Bigg]
-\end{align*}
+	      Le tableau représente l'état actuel du plateau de jeu à votre tour. Les 0, 1 et 2 sont encodés comme des entiers (non pas des strings) dans le tableau.\\
+	      \emph{Exemple:} Le plateau de jeu de la Figure \ref{fig:ex_sec3} est représenté par le tableau suivant :
+	      \begin{align*}
+		      \Bigg[ & \begin{bmatrix} 0, & 0, & 0, & 0, & 0, & 0, & 0 \end{bmatrix},       \\
+		             & \begin{bmatrix} 0, & 0, & 0, & 0, & 0, & 0, & 0 \end{bmatrix},       \\
+		             & \begin{bmatrix} 0, & 0, & 0, & 0, & 0, & 0, & 0 \end{bmatrix},       \\
+		             & \begin{bmatrix} 0, & 0, & 2, & 0, & 0, & 0, & 0 \end{bmatrix},       \\
+		             & \begin{bmatrix} 0, & 0, & 2, & 1, & 0, & 0, & 0 \end{bmatrix},       \\
+		             & \begin{bmatrix} 0, & 1, & 2, & 1, & 0, & 0, & 0 \end{bmatrix} \Bigg]
+	      \end{align*}
 
 	\item \texttt{player} est un entier qui peut prendre la valeur 1 ou 2 et qui représente si nous jouons pour le joueur 1 ou le joueur 2. \emph{Exemple:} 1
 \end{itemize}
@@ -238,7 +240,7 @@ Il vous est demandé d'implémenter en Python votre IA \texttt{ai\_student.py}, 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.75\textwidth]{dev3.png}
- 	\caption{Illustration de l'exemple utilisé pour expliquer le code \texttt{ai\_student}. Le joueur 1 est représenté par la couleur rouge et le joueur 2 est représenté par la couleur jaune. Le joueur 1 doit jouer la colonne 3 pour éviter de perdre la partie.}
+	\caption{Illustration de l'exemple utilisé pour expliquer le code \texttt{ai\_student}. Le joueur 1 est représenté par la couleur rouge et le joueur 2 est représenté par la couleur jaune. Le joueur 1 doit jouer la colonne 3 pour éviter de perdre la partie.}
 	\label{fig:ex_sec3}
 \end{figure}
 
@@ -257,10 +259,10 @@ Maintenant que vous avez codé votre IA \texttt{ai\_student}, il vous suffit de 
 \emph{Cas 1:} Le joueur 1 joue \texttt{ai\_student.} et le joueur 2 joue \texttt{ai\_random.}
 
 \begin{solutionbox}{100mm}
-Insérez le graphe et mentionnez les probabilités moyennes obtenues pour $10^4$ parties.
+	Insérez le graphe et mentionnez les probabilités moyennes obtenues pour $10^4$ parties.
 
-\centering
-\includegraphics[width=0.75\textwidth]{MCplot_empty.png}
+	\centering
+	\includegraphics[width=0.75\textwidth]{MCplot_empty.png}
 \end{solutionbox}
 
 \medskip
@@ -268,10 +270,10 @@ Insérez le graphe et mentionnez les probabilités moyennes obtenues pour $10^4$
 \emph{Cas 1:} Le joueur 1 joue \texttt{ai\_random.} et le joueur 2 joue \texttt{ai\_student.}
 
 \begin{solutionbox}{100mm}
-Insérez le graphe et mentionnez les probabilités moyennes obtenues pour $10^4$ parties.
+	Insérez le graphe et mentionnez les probabilités moyennes obtenues pour $10^4$ parties.
 
-\centering
-\includegraphics[width=0.75\textwidth]{MCplot_empty.png}
+	\centering
+	\includegraphics[width=0.75\textwidth]{MCplot_empty.png}
 \end{solutionbox}
 
 \end{document}

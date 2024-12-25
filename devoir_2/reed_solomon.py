@@ -110,4 +110,3 @@ class ReedSolomon:
         message = self.t.translateToHuman(decoded_bin)
         return True, message
         # END TODO
-
